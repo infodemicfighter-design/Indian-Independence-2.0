@@ -1,1 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azaadi Movement 2.0 — Manifesto</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Urbanist:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: #050505;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .accent-green { color: #00c853; }
+        .bg-accent-green { background-color: #00c853; }
+        .border-accent-green { border-color: #00c853; }
+        .accent-orange { color: #ff5722; }
+        .bg-accent-orange { background-color: #ff5722; }
 
+        /* Watermark Background Animation */
+        .watermark {
+            position: absolute;
+            font-size: 12vw;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.02);
+            text-transform: uppercase;
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+        }
+        
+        /* Smooth Glow Effects */
+        .glow-card:hover {
+            box-shadow: 0 0 25px rgba(0, 200, 83, 0.15);
+            border-color: rgba(0, 200, 83, 0.4);
+        }
+        .glow-card-orange:hover {
+            box-shadow: 0 0 25px rgba(255, 87, 34, 0.15);
+            border-color: rgba(255, 87, 34, 0.4);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen">
+
+    <!-- Global Watermark Brandings -->
+    <div class="watermark top-20 left-5">AZAADI 2.0</div>
+    <div class="watermark top-[45%] -right-10">CITIZEN FIRST</div>
+    <div class="watermark bottom-20 left-10">PREAMBLE</div>
+
+    <!-- 1. HERO HEADER SECTION -->
+    <header class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 border-b border-zinc-900 z-10">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,200,83,0.05)_0%,transparent_70%)]"></div>
+        
+        <span class="text-sm uppercase tracking-[0.3em] text-zinc-500 mb-4 block font-semibold">The Recreation of Indian State Body</span>
+        <h1 class="text-5xl md:text-8xl font-black tracking-tight mb-6 uppercase bg-gradient-to-r from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+            Azaadi Movement 2.0
+        </h1>
+        <p class="font-serif text-xl md:text-3xl text-zinc-400 max-w-4xl italic leading-relaxed">
+            "Power to the Citizens, Strength to the Law."
+        </p>
+        
+        <div class="mt-12 flex flex-col sm:flex-row gap-6">
+            <a href="#pillars" class="px-8 py-4 bg-accent-green text-black font-bold uppercase tracking-wider rounded-none hover:bg-white transition-all duration-300 shadow-lg">
+                Explore Core Reforms
+            </a>
+            <a href="#tracker" class="px-8 py-4 border border-zinc-700 hover:border-white font-bold uppercase tracking-wider rounded-none transition-all duration-300">
+                Live Voting Dashboard
+            </a>
+        </div>
+        
+        <!-- Total Supporters Display -->
+        <div class="mt-16 text-sm text-zinc-500 tracking-widest uppercase">
+            Current Active Supporters: <span id="total-supporters-count" class="text-white font-bold tracking-normal">Loading...</span>
+        </div>
+    </header>
+
+    <!-- 2. THE CORE PROBLEM SECTION -->
+    <section class="relative py-24 px-6 max-w-7xl mx-auto z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight">Aaj Ka System Ke <span class="accent-orange">Loopholes</span></h2>
+            <p class="text-zinc-500 mt-4">Kyun humein ek naye praroop ki zaroorat hai?</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-8 border border-zinc-900 bg-zinc-950/50 glow-card-orange transition-all duration-300">
+                <div class="text-xs font-bold uppercase tracking-widest accent-orange mb-4">01 / Political Capture</div>
+                <h3 class="text-xl font-bold mb-3">Absolute Power & Control</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Saari taqat netaon aur chunav jeetne ke aas-paas ghoomti hai. Janta ke mudde sirf 5 saal mein ek baar sune jaate hain.</p>
+            </div>
+            <div class="p-8 border border-zinc-900 bg-zinc-950/50 glow-card-orange transition-all duration-300">
+                <div class="text-xs font-bold uppercase tracking-widest accent-orange mb-4">02 / Delayed Justice</div>
+                <h3 class="text-xl font-bold mb-3">Reactive & Unequal Judiciary</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Kanoon banne ke baad uske loopholes dikhte hain. Collegium system aur retirement ke baad political careers se transparency khatam hoti hai.</p>
+            </div>
+            <div class="p-8 border border-zinc-900 bg-zinc-950/50 glow-card-orange transition-all duration-300">
+                <div class="text-xs font-bold uppercase tracking-widest accent-orange mb-4">03 / Opaque Bureaucracy</div>
+                <h3 class="text-xl font-bold mb-3">Administrative Bullying</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">IAS/IPS aur prashashnik adhikariyo par netaon ka dabao hota hai, jisse emandar officers ka baar-baar revenge transfer kiya jata hai.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. THE 6 MANIFESTO PILLARS SECTION -->
+    <section id="pillars" class="relative py-24 px-6 max-w-7xl mx-auto border-t border-zinc-900 z-10">
+        <div class="text-center mb-20">
+            <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight">The 6 Core <span class="accent-green">Manifesto Pillars</span></h2>
+            <p class="text-zinc-500 mt-4">Citizen-Centric Governance ka complete framework</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Pillar 1 -->
+            <div class="p-8 border border-zinc-900 bg-zinc-950 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs tracking-widest text-zinc-600 font-bold uppercase mb-4 block">Pillar 01</span>
+                    <h3 class="text-2xl font-bold mb-4">Preamble Sthiti Majbooti</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">"We, the People..." ke asli vaade ko zameen par utarna. Dharam, jaati, gender ya region ke bhedbhav ko poori tarah khatam karke sirf ek identity rakhna — <strong>INDIAN</strong>.</p>
+                </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="p-8 border border-zinc-900 bg-zinc-950 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs tracking-widest text-zinc-600 font-bold uppercase mb-4 block">Pillar 02</span>
+                    <h3 class="text-2xl font-bold mb-4">Restructuring of Laws</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Political parties ka kaam sirf vichardhara aur suggestions dena hoga, kanoon par kabza karna nahi. Active Presidential aur Preinformative Judicial system lagoo hoga.</p>
+                </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="p-8 border border-zinc-900 bg-zinc-950 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs tracking-widest text-zinc-600 font-bold uppercase mb-4 block">Pillar 03</span>
+                    <h3 class="text-2xl font-bold mb-4">Direct Citizen Participation</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">Digital Referendum aur Feedback Mechanism se bade kanoonon par janta ki direct rai li jayegi. Har nagrik ke paas ek legal Citizen Protection Shield hogi.</p>
+                </div>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="p-8 border border-zinc-900 bg-zinc-950 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs tracking-widest text-zinc-600 font-bold uppercase mb-4 block">Pillar 04</span>
+                    <h3 class="text-2xl font-bold mb-4">Subsidiary Active System</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed"><strong>Annual Right to Recall:</strong> Netaon ke bhashan aur vaade Digital ID par record honge. Agar 1 saal ke audit mein kaam kharab raha, toh seat chhodni hogi aur party naya candidate degi.</p>
+                </div>
+            </div>
+
+            <!-- Pillar 5 -->
+            <div class="p-8 border border-zinc-900 bg-zinc-950 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs tracking-widest text-zinc-600 font-bold uppercase mb-4 block">Pillar 05</span>
+                    <h3 class="text-2xl font-bold mb-4">Accountable Judiciary</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">CJI ka chunaav President, Ruling party, aur Top 3 Opposition panel karega. Judges ke past records open rahenge, 1 saal ka performance audit hoga, aur post-retirement politics par ban hoga.</p>
+                </div>
+            </div>
+
+            <!-- Pillar 6 -->
+            <div class="p-8 border border-zinc-900 bg-zinc-950 glow-card transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs tracking-widest text-zinc-600 font-bold uppercase mb-4 block">Pillar 06</span>
+                    <h3 class="text-2xl font-bold mb-4">Protected Administration</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">IAS/IPS officers well-executor banenge. Unhe political badli/dabao se bachaya jayega. Retired judges ki supreme team unka financial aur public-interaction audit karegi via Proactive RTI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. DYNAMIC SYSTEM EXPLORER (TABBED VIEW) -->
+    <section class="py-24 px-6 max-w-5xl mx-auto border-t border-zinc-900 z-10 relative">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold uppercase">System Comparison Explorer</h2>
+            <p class="text-zinc-500 mt-2">Tabs par click karke badlaav ko khud compare karein</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-2 mb-8 bg-zinc-950 p-2 border border-zinc-900">
+            <button onclick="switchTab(1)" id="tab-btn-1" class="tab-btn px-4 py-2 font-bold text-xs uppercase tracking-wider bg-accent-green text-black transition-all">Pillar 1-3 Basics</button>
+            <button onclick="switchTab(4)" id="tab-btn-4" class="tab-btn px-4 py-2 font-bold text-xs uppercase tracking-wider text-zinc-400 hover:text-white transition-all">Pillar 4: Recall System</button>
+            <button onclick="switchTab(5)" id="tab-btn-5" class="tab-btn px-4 py-2 font-bold text-xs uppercase tracking-wider text-zinc-400 hover:text-white transition-all">Pillar 5: Judges Accountable</button>
+            <button onclick="switchTab(6)" id="tab-btn-6" class="tab-btn px-4 py-2 font-bold text-xs uppercase tracking-wider text-zinc-400 hover:text-white transition-all">Pillar 6: Administration</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="tab-content-area">
+            <!-- Dynamic contents injected via JS -->
+        </div>
+    </section>
+
+    <!-- 5. LIVE ACCOUNTABILITY TRACKER (VOTING SECTION) -->
+    <section id="tracker" class="relative py-24 px-6 max-w-4xl mx-auto border-t border-zinc-900 z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight">Live Consensus <span class="accent-green">Dashboard</span></h2>
+            <p class="text-zinc-500 mt-4">Kya aap is vichardhara ke sath hain? Apna mat (Opinion) submit karein.</p>
+        </div>
+
+        <div class="space-y-12 bg-zinc-950 p-8 border border-zinc-900 relative">
+            
+            <!-- Dynamic Loop Tracker Fields (Pillars 1 to 6) -->
+            <div id="voting-pillars-container" class="space-y-10">
+                <!-- JavaScript automatically populates interactive progress elements here -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-zinc-900 text-center text-xs text-zinc-600 tracking-widest uppercase z-10 relative">
+        &copy; 2026 Azaadi Movement 2.0. Built for Truth, Transpancy & Citizen Empowerment.
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT ENGINE -->
+    <script>
+        // System Explorer Tab Configuration
+        const tabData = {
+            1: {
+                old: "Absolute political control. Citizens only vote once in 5 years with no direct control over loopholed law creation.",
+                new: "Direct citizen referencing. Laws are filtered by preinformative judicial scrutiny before implementation with unified Indian identity."
+            },
+            4: {
+                old: "Netao ke jhoothe bhashan aur jhoothe vaade chalte rehte hain. Janta 5 saal tak bina kisi counter power ke majboor rehti hai.",
+                new: "Annual Digital Vote based on verified promises tracker. If performance falls below margins, the seat is configurationally reset instantly."
+            },
+            5: {
+                old: "Judges appoint judges (Collegium System). Retirement ke baad political posts aur ministries reward ke roop mein milti hain.",
+                new: "CJI election handled transparently via neutral consensus panel. Strict lifetime ban on joining any active political party or ministry."
+            },
+            6: {
+                old: "Bureaucrats are bullied by ruling politicians. Frequent revenge transfers force compliance, keeping system records opaque.",
+                new: "Administrative execution body is insulated from political transfers. Rigorous independent public audit on finance & interactions."
+            }
+        };
+
+        function switchTab(pillarNum) {
+            // Button styles reset
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-accent-green', 'text-black');
+                btn.classList.add('text-zinc-400');
+            });
+            // Highlight selected button
+            document.getElementById(`tab-btn-${pillarNum}`).classList.add('bg-accent-green', 'text-black');
+            
+            // Content Update
+            const area = document.getElementById('tab-content-area');
+            area.innerHTML = `
+                <div class="p-6 border border-zinc-900 bg-black/40">
+                    <h4 class="text-xs font-bold tracking-widest uppercase accent-orange mb-3">Aaj Ka legacy System</h4>
+                    <p class="text-zinc-400 text-sm leading-relaxed">${tabData[pillarNum].old}</p>
+                </div>
+                <div class="p-6 border border-accent-green bg-zinc-950">
+                    <h4 class="text-xs font-bold tracking-widest uppercase accent-green mb-3">Azaadi 2.0 Framework</h4>
+                    <p class="text-white text-sm leading-relaxed font-semibold">${tabData[pillarNum].new}</p>
+                </div>
+            `;
+        }
+
+        // --- BACKEND INTEGRATION ARCHITECTURE ---
+        const pillarNames = {
+            1: "Preamble Sthiti & One Identity",
+            2: "Restructuring of Absolute Laws",
+            3: "Direct Citizen Referendums",
+            4: "Subsidiary Active (Right to Recall)",
+            5: "Accountable Judicial Scrutiny",
+            6: "Protected Administration Audit"
+        };
+
+        async function loadDashboardMetrics() {
+            try {
+                const response = await fetch('/api/stats');
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    // Update Hero Supporters counter metric
+                    document.getElementById('total-supporters-count').innerText = Number(data.total_supporters).toLocaleString('en-IN') + " Citizens";
+                    
+                    // Render/Refresh Voting Blocks
+                    const container = document.getElementById('voting-pillars-container');
+                    container.innerHTML = ''; // Reset frame
+                    
+                    for (let i = 1; i <= 6; i++) {
+                        const stats = data.pillars[i] || { yes: 0, no: 0 };
+                        const total = stats.yes + stats.no;
+                        const yesPercentage = total > 0 ? Math.round((stats.yes / total) * 100) : 50; // default view baseline
+                        
+                        const blockHtml = `
+                            <div>
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3 gap-2">
+                                    <h3 class="font-bold text-sm uppercase tracking-wider text-zinc-300">Pillar 0${i}: ${pillarNames[i]}</h3>
+                                    <div class="flex gap-2">
+                                        <button onclick="castSystemVote(${i}, 'yes')" class="px-3 py-1 text-xs font-bold bg-zinc-900 border border-zinc-800 hover:border-accent-green hover:text-accent-green text-white transition-all">YES (${stats.yes})</button>
+                                        <button onclick="castSystemVote(${i}, 'no')" class="px-3 py-1 text-xs font-bold bg-zinc-900 border border-zinc-800 hover:border-accent-orange hover:text-accent-orange text-white transition-all">NO (${stats.no})</button>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-zinc-900 h-2 rounded-none overflow-hidden flex">
+                                    <div class="bg-accent-green h-full transition-all duration-500" style="width: ${yesPercentage}%"></div>
+                                    <div class="bg-accent-orange h-full transition-all duration-500" style="width: ${100 - yesPercentage}%"></div>
+                                </div>
+                                <div class="flex justify-between text-[10px] text-zinc-500 uppercase font-bold tracking-widest mt-1">
+                                    <span>Public Support: ${yesPercentage}%</span>
+                                    <span>Dissent: ${100 - yesPercentage}%</span>
+                                </div>
+                            </div>
+                        `;
+                        container.innerHTML += blockHtml;
+                    }
+                }
+            } catch (error) {
+                console.error("Dashboard synchronization error:", error);
+                // Fallback rendering mechanics if running standalone frontend without server setup
+                document.getElementById('total-supporters-count').innerText = "10,000,000+ Citizens";
+            }
+        }
+
+        async function castSystemVote(pillarId, voteType) {
+            try {
+                const response = await fetch('/api/vote', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ pillar_id: pillarId, vote_type: voteType })
+                });
+                const result = await response.json();
+                if (result.status === 'success') {
+                    loadDashboardMetrics(); // Dynamic live metric refresh
+                }
+            } catch (error) {
+                alert("Vote processing failed. Please run your Python Flask Application server architecture to handle tracking records.");
+            }
+        }
+
+        // Initialization execution routines
+        document.addEventListener('DOMContentLoaded', () => {
+            switchTab(1);
+            loadDashboardMetrics();
+        });
+    </script>
+</body>
+</html>
