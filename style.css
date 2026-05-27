@@ -1,1 +1,79 @@
+/* ==========================================================================
+   Azaadi Movement 2.0 - Core Stylesheet
+   ========================================================================== */
 
+/* Base Setup & Typography Overrides */
+body {
+    font-family: 'Urbanist', sans-serif;
+    background-color: #050505;
+    color: #f3f4f6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Custom Identity Colors */
+.accent-green { 
+    color: #00c853; 
+}
+.bg-accent-green { 
+    background-color: #00c853; 
+}
+.border-accent-green { 
+    border-color: #00c853; 
+}
+.accent-orange { 
+    color: #ff5722; 
+}
+.bg-accent-orange { 
+    background-color: #ff5722; 
+}
+
+/* Background Brand Watermarks */
+.watermark {
+    position: absolute;
+    font-size: 12vw;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.015); /* Soft, non-distracting transparency */
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    letter-spacing: 0.1em;
+}
+
+/* Interactive Dynamic Cards UI */
+.glow-card, .glow-card-orange {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 200, 83, 0.08);
+    border-color: rgba(0, 200, 83, 0.4);
+    transform: translateY(-2px);
+}
+
+.glow-card-orange:hover {
+    box-shadow: 0 20px 40px rgba(255, 87, 34, 0.08);
+    border-color: rgba(255, 87, 34, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Custom Scrollbar for Premium Look */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #00c853;
+}
